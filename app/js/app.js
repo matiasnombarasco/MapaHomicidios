@@ -13,6 +13,6 @@ angular.module('myApp', [
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/test', {templateUrl: 'partials/test.html', controller: 'MapaController'});
-  $routeProvider.when('/view2', {templateUrl: 'partials/partial2.html', controller: 'MyCtrl2'});
-  $routeProvider.otherwise({redirectTo: '/index'});
+  $routeProvider.when('/mapa', {templateUrl: 'partials/mapa.html', controller: 'Mapa'});
+  $routeProvider.otherwise({redirectTo: '/mapa'});
 }]);
