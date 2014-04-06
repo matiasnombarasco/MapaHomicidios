@@ -2,8 +2,9 @@
 
 /* Services */
 
+var dataService = angular.module('HomicidiosApp.services', ['ngResource']);
 
-// Demonstrate how to register services
-// In this case it is a simple value service.
-angular.module('myApp.services', []).
-  value('version', '0.1');
+dataService.factory('HomicidiosServices', ['$resource', function($resource) {
+        return $resource('../api/homicidios.json', {}, {method: 'GET' , isArray: true});
+    }]
+);

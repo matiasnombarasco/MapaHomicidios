@@ -50,8 +50,8 @@ while ($row = @mysql_fetch_assoc($result)){
   $data[$i] = array(
       'id' => $row['id'],
       'gps' => array(
-          'latitud' => $row["lat"],
-          'longitud' => $row["lng"]
+          'latitude' => $row["lat"],
+          'longitude' => $row["lng"]
       ),
       'victima' => array(
         'nombre' => $row['nombre'],

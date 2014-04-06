@@ -2,13 +2,13 @@
 
 
 // Declare app level module which depends on filters, and services
-angular.module('myApp', [
+angular.module('HomicidiosApp', [
   'ngRoute',
   'google-maps',
-  'myApp.filters',
-  'myApp.services',
-  'myApp.directives',
-  'myApp.controllers',
+  'HomicidiosApp.filters',
+  'HomicidiosApp.services',
+  'HomicidiosApp.directives',
+  'HomicidiosApp.controllers',
 
 ]).
 config(['$routeProvider', function($routeProvider) {

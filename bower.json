@@ -1,14 +1,17 @@
 {
   "name": "angular-seed",
-  "description": "A starter project for AngularJS",
-  "version": "0.0.0",
+  "description": "Mapa de Homicidios de la ciudad de Rosario - Argentina (equipo de trabajo del concejal Jorge Boasso)",
+  "version": "0.5.0",
   "homepage": "https://github.com/angular/angular-seed",
   "license": "MIT",
   "private": true,
   "dependencies": {
     "angular": "1.2.x",
+    "bootstrap": "~3.1.1",
     "angular-route": "1.2.x",
     "angular-loader": "1.2.x",
-    "angular-mocks": "~1.2.15"
+    "angular-mocks": "~1.2.15",
+    "angular-resource": "~1.2.15"
+
   }
 }
