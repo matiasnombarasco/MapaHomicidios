@@ -19,6 +19,10 @@ angular.module('HomicidiosApp.controllers', [])
             templateUrl : 'markerWindow.html',
             gun : 'http://localhost/MapaHomicidios/app/img/gun.png'
         };
+        $scope.tipo = function(homicidio) {
+            console.log(homicidio);
+            return homicidio.tipo == 1
+        }
 
   }]).controller('HomicidiosCrl', ['$scope','HomicidiosServices', function($scope, HomicidiosServices) {
         $scope.homicidios = HomicidiosServices.query();

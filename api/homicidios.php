@@ -68,6 +68,7 @@ while ($row = @mysql_fetch_assoc($result)){
       'resumen' => $row['resumen'],
       'link' => $row['link'],
       'fuente' => $row['fuente'],
+      'tipo' => $row['tipo']
 
   );
 

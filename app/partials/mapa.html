@@ -1,20 +1,43 @@
 <h1>Mapa del delito</h1>
+<div class="row">
+    <div class="col-lg-3">
+        <fieldset>
+            <h5>Filtros</h5>
+            <div class="form-group">
+                <label for="comisaria">Comisaria</label>
+                <select class="form-control" id="comisaria" name="comisaria" >
 
-<div class="mapContainer">
-    <google-map center="map.center" zoom="map.zoom">
-        <markers>
-            <marker ng-repeat="homicidio in homicidios" coords='homicidio.gps' icon="markerIcon.gun">
-                <window>
-                    <p>{{homicidio.resumen}}</p>
-                    <p>Comisaria: {{homicidio.comisaria}}</p>
-                </window>
+                 </select>
+             </div>
+            <div class="form-group">
+                <label for="comisaria">Tipo</label>
+                <select ng-change="tipo()" ng-model="homicidios" class="form-control" id="tipo" name="tipo">
+                    <option value="0">Todos</option>
+                    <option value="1">Arma de Fuego</option>
+                    <option value="2">Arma Blanca</option>
+                </select>
+            </div>
+        </fieldset>
+    </div>
+    <div class="col-lg-9">
+        <div class="mapContainer">
+            <google-map center="map.center" zoom="map.zoom">
+                <markers>
+                    <marker ng-repeat="homicidio in homicidios | filter: tipo" coords='homicidio.gps' icon="markerIcon.gun">
+                        <window>
+                            <p>{{homicidio.resumen}}</p>
+                            <p>Comisaria: {{homicidio.comisaria}}</p>
+                        </window>
 
-            </marker>
+                    </marker>
 
-        </markers>
+                </markers>
 
-    </google-map>
+            </google-map>
+        </div>
+    </div>
 </div>
+
 
 <blockquote>
     Version 0.5
