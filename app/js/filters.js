@@ -3,8 +3,17 @@
 /* Filters */
 
 angular.module('HomicidiosApp.filters', []).
-  filter('interpolate', ['version', function(version) {
-    return function(text) {
-      return String(text).replace(/\%VERSION\%/mg, version);
+  filter('selectByTipo', function() {
+    return function(homicidios, tipo) {
+      var out = [{}];
+      /*for(var homicidio in homicidios) {
+          if(homicidio.tipo == tipo) {
+                 out.push(homicidio);
+              }
+          }
+        return out;
+*/
     };
-  }]);
+
+
+  });

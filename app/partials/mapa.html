@@ -11,8 +11,8 @@
              </div>
             <div class="form-group">
                 <label for="comisaria">Tipo</label>
-                <select ng-change="tipo()" ng-model="homicidios" class="form-control" id="tipo" name="tipo">
-                    <option value="0">Todos</option>
+                <select ng-model="filt.tipo" class="form-control" id="tipo" name="tipo">
+                    <option value="">Todos</option>
                     <option value="1">Arma de Fuego</option>
                     <option value="2">Arma Blanca</option>
                 </select>
@@ -23,7 +23,7 @@
         <div class="mapContainer">
             <google-map center="map.center" zoom="map.zoom">
                 <markers>
-                    <marker ng-repeat="homicidio in homicidios | filter: tipo" coords='homicidio.gps' icon="markerIcon.gun">
+                    <marker ng-repeat="homicidio in homicidios | filter: filt" coords='homicidio.gps' icon="markerIcon.gun">
                         <window>
                             <p>{{homicidio.resumen}}</p>
                             <p>Comisaria: {{homicidio.comisaria}}</p>
