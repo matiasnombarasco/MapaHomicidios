@@ -21,6 +21,10 @@ angular.module('HomicidiosApp.controllers', [])
         };
         $scope.tipo = function(homicidio) {
 
+        };
+        //
+        $scope.comisaria = function(homicidio) {
+
         }
 
   }]).controller('HomicidiosCrl', ['$scope','HomicidiosServices', function($scope, HomicidiosServices) {

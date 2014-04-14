@@ -17,3 +17,20 @@ angular.module('HomicidiosApp.filters', []).
 
 
   });
+
+
+angular.module('HomicidiosApp.filters', []).
+    filter('selectByComisaria', function() {
+        return function(homicidios, comisaria) {
+            var out = [{}];
+            /*for(var homicidio in homicidios) {
+             if(homicidio.comisaria == comisaria) {
+             out.push(homicidio);
+             }
+             }
+             return out;
+             */
+        };
+
+
+    });

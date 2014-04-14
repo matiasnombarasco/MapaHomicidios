@@ -1,25 +1,6 @@
-<h1>Mapa del delito</h1>
+<h1>Mapa de Homicidios de Rosario 2013/14</h1>
 <div class="row">
-    <div class="col-lg-3">
-        <fieldset>
-            <h5>Filtros</h5>
-            <div class="form-group">
-                <label for="comisaria">Comisaria</label>
-                <select class="form-control" id="comisaria" name="comisaria" >
-
-                 </select>
-             </div>
-            <div class="form-group">
-                <label for="comisaria">Tipo</label>
-                <select ng-model="filt.tipo" class="form-control" id="tipo" name="tipo">
-                    <option value="">Todos</option>
-                    <option value="1">Arma de Fuego</option>
-                    <option value="2">Arma Blanca</option>
-                </select>
-            </div>
-        </fieldset>
-    </div>
-    <div class="col-lg-9">
+    <div class="col-lg-10">
         <div class="mapContainer">
             <google-map center="map.center" zoom="map.zoom">
                 <markers>
@@ -36,6 +17,64 @@
             </google-map>
         </div>
     </div>
+    <div class="col-lg-2">
+        <fieldset>
+            <h5>Filtros</h5>
+            <div class="form-group">
+                <label for="comisaria">Comisaria</label>
+                <select ng-model="filt.comisaria" class="form-control" id="comisaria" name="comisaria" >
+                        <option value="">Todas</option>
+                        <option value="1">Seccional 1°</option>
+                        <option value="2">Seccional 2°</option>
+                        <option value="3">Seccional 3°</option>
+                        <option value="4">Seccional 4°</option>
+                        <option value="5">Seccional 5°</option>
+                        <option value="6">Seccional 6°</option>
+                        <option value="7">Seccional 7°</option>
+                        <option value="8">Seccional 8°</option>
+                        <option value="9">Seccional 9°</option>
+                        <option value="10">Seccional 10°</option>
+                        <option value="11">Seccional 11°</option>
+                        <option value="12">Seccional 12°</option>
+                        <option value="13">Seccional 13°</option>
+                        <option value="14">Seccional 14°</option>
+                        <option value="15">Seccional 15°</option>
+                        <option value="16">Seccional 16°</option>
+                        <option value="17">Seccional 17°</option>
+                        <option value="18">Seccional 18°</option>
+                        <option value="19">Seccional 19°</option>
+                        <option value="20">Seccional 20°</option>
+                        <option value="21">Seccional 21°</option>
+                        <option value="30">Seccional 30°</option>
+                        <option value="32">Seccional 32°</option>
+                        <option value="33">Seccional 33°</option>
+                        <option value="s2">Sub-comisaría 2°</option>
+                        <option value="s19">Sub-comisaría 19°</option>
+                        <option value="s20">Sub-comisaría 20°</option>
+                        <option value="s21">Sub-comisaría 21°</option>
+                        <option value="s22">Sub-comisaría 22°</option>
+                        <option value="s23">Sub-comisaría 23°</option>
+                        <option value="s24">Sub-comisaría 24°</option>
+                    </select>
+             </div>
+
+            <div class="form-group">
+                <label for="comisaria">Tipo</label>
+                <select ng-model="filt.tipo" class="form-control" id="tipo" name="tipo">
+                    <option value="">Todos</option>
+                    <option value="1">Arma de Fuego</option>
+                    <option value="2">Arma Blanca</option>
+                    <option value="3">Traumatismos</option>
+                    <option value="4">Ahorcamiento</option>
+                    <option value="5">Quemaduras</option>
+                </select>
+
+            </div>
+
+        </fieldset>
+    </div>
+
+
 </div>
 
 
