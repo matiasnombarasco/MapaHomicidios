@@ -19,6 +19,10 @@ angular.module('HomicidiosApp.controllers', [])
             templateUrl : 'markerWindow.html',
             gun : 'http://localhost/MapaHomicidios/app/img/gun.png'
         };
+
+        $scope.markerIcon = {
+            gun: ''
+        };
         $scope.tipo = function(homicidio) {
 
         };
@@ -37,7 +41,7 @@ angular.module('HomicidiosApp.controllers', [])
 
            if(_.indexOf($("#comisaria").val(), item.comisaria) >= 0) {
 
-               console.log(item.comisaria); return true;
+        return true;
            } else {
                return false;
            }
