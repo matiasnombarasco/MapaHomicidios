@@ -4,7 +4,7 @@
         <div class="mapContainer">
             <google-map center="map.center" zoom="map.zoom">
                 <markers>
-                    <marker ng-repeat="homicidio in homicidios | filter: filterByTipo | filter: filterByComisaria " coords='homicidio.gps' icon="markerIcon.gun">
+                    <marker ng-repeat="homicidio in homicidios | filter: filterByTipo | filter: filterByComisaria " coords='homicidio.gps'>
                         <window>
                             <p>{{homicidio.resumen}}</p>
                             <p>Comisaria: {{homicidio.comisaria}}</p>

@@ -21,7 +21,8 @@ angular.module('HomicidiosApp.controllers', [])
         };
 
         $scope.markerIcon = {
-            gun: ''
+            gun: 'img/gun.png',
+            knife: 'img/knife.png'
         };
         $scope.tipo = function(homicidio) {
 
