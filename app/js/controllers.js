@@ -25,7 +25,39 @@ angular.module('HomicidiosApp.controllers', [])
         //
         $scope.comisaria = function(homicidio) {
 
-        }
+        };
+        $scope.filterByComisaria = function(item) {
+           if( $("#comisaria").val() == null ) {
+               return true;
+           };
+           if( $("#comisaria").val() ==  0) {
+               return true;
+           }
+           // console.log($("#comisaria").val());
+
+           if(_.indexOf($("#comisaria").val(), item.comisaria) >= 0) {
+
+               console.log(item.comisaria); return true;
+           } else {
+               return false;
+           }
+
+        };
+        $scope.filterByTipo = function(item) {
+           if($("#tipo").val() == 0 ) {
+               return true;
+           }
+
+           if($("#tipo").val() == item.tipo) {
+               return true;
+           } else {
+               return false;
+           }
+        };
+        $scope.cleanFilter = function() {
+            $scope.homicidios.query  = {};
+        };
+        $scope.cleanFilter();
 
   }]).controller('HomicidiosCrl', ['$scope','HomicidiosServices', function($scope, HomicidiosServices) {
         $scope.homicidios = HomicidiosServices.query();
