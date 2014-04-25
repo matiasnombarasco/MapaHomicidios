@@ -7,6 +7,8 @@ angular.module('HomicidiosApp.controllers', [])
 
   }])
   .controller('Mapa', ['$scope', 'HomicidiosServices', function($scope, HomicidiosServices) {
+        $scope.actualMarker = null;
+        $scope.showWindow = false;
         $scope.homicidios = HomicidiosServices.query();
         $scope.map = {
             center: {
@@ -17,13 +19,41 @@ angular.module('HomicidiosApp.controllers', [])
         };
         $scope.mapConfig = {
             templateUrl : 'markerWindow.html',
-            gun : 'http://localhost/MapaHomicidios/app/img/gun.png'
+            gun : 'http://boasso24horas.com/mapas/homicidios/MapaHomicidios/app/img/gun.png'
         };
 
         $scope.markerIcon = {
             gun: 'img/gun.png',
-            knife: 'img/knife.png'
+            knife: 'img/knife.png',
+            strike: 'img/strike.png',
+            orca: 'img/orca.png',
+            flame: 'img/flama.png'
+
         };
+        $scope.getIcon = function(type) {
+            if(type == 2) {
+                return $scope.markerIcon.knife;
+            }
+            if(type == 3) {
+                return $scope.markerIcon.strike;
+            }
+            if(type == 4) {
+                return $scope.markerIcon.strike;
+            }
+            if(type == 5) {
+                return $scope.markerIcon.flame;
+            }
+
+            return $scope.markerIcon.gun;
+        };
+
+        $scope.onMarkerClicked = function(item) {
+            console.log(this);
+            $scope.actualMarker = item;
+
+            $scope.showWindow = true;
+        };
+
         $scope.tipo = function(homicidio) {
 
         };

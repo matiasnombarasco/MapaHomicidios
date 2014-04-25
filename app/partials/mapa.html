@@ -1,25 +1,30 @@
-<h1>Mapa de Homicidios de Rosario 2013/14</h1>
+<h2>Mapa de Homicidios de Rosario 2013/14</h2>
+<!--<img src="http://boasso24horas.com/mapas/homicidios/MapaHomicidios/app/img/banner.jpg" align="top"></br>-->
 <div class="row">
     <div class="col-xs-9">
         <div class="mapContainer">
-            <google-map center="map.center" zoom="map.zoom">
+            <google-map center="map.center" zoom="map.zoom" draggable="true">
                 <markers>
-                    <marker ng-repeat="homicidio in homicidios | filter: filterByTipo | filter: filterByComisaria " coords='homicidio.gps'>
-                        <window>
-                            <p>{{homicidio.resumen}}</p>
-                            <p>Comisaria: {{homicidio.comisaria}}</p>
-                        </window>
+                    <marker ng-repeat="homicidio in homicidios | filter: filterByTipo | filter: filterByComisaria " coords='homicidio.gps' icon="getIcon(homicidio.tipo)" click="onMarkerClicked(this)">
 
                     </marker>
 
+
                 </markers>
+                <window show="showWindow" coords="actualMarker.homicidio.gps">
+                    <p>Nombre: {{actualMarker.homicidio.victima.nombre}}</p>
+                    <p>Apellido: {{actualMarker.homicidio.victima.apellido}}</p>
+                    <p>{{actualMarker.homicidio.edad}}</p>
+                    <p>Comisaria:{{actualMarker.homicidio.comisaria}}</p>
+                    <p>Fecha: {{actualMarker.homicidio.fecha}}</p>
+                </window>
 
             </google-map>
         </div>
     </div>
     <div class="col-xs-3">
         <fieldset>
-            <h5>Filtros</h5>
+            
             <div class="form-group">
                 <label for="comisaria">Comisaria</label>
                 <select ng-model="filt.comisaria" multiple="multiple" class="form-control" id="comisaria" name="comisaria" >
@@ -59,7 +64,7 @@
              </div>
 
             <div class="form-group">
-                <label for="comisaria">Tipo</label>
+                <label for="comisaria">Tipo de arma</label>
                 <select ng-model="filt.tipo" class="form-control" id="tipo" name="tipo">
                     <option value="">Todos</option>
                     <option value="1">Arma de Fuego</option>
