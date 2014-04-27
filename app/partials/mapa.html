@@ -3,23 +3,28 @@
 <div class="row">
     <div class="col-xs-9">
         <div class="mapContainer">
-            <google-map center="map.center" zoom="map.zoom" draggable="true">
+            <google-map center="map.center" zoom="map.zoom" control="googleMap" draggable="true">
+
+
                 <markers>
                     <marker ng-repeat="homicidio in homicidios | filter: filterByTipo | filter: filterByComisaria " coords='homicidio.gps' icon="getIcon(homicidio.tipo)" click="onMarkerClicked(this)">
-
                     </marker>
-
-
                 </markers>
-                <window show="showWindow" coords="actualMarker.homicidio.gps">
-                    <p>Nombre: {{actualMarker.homicidio.victima.nombre}}</p>
-                    <p>Apellido: {{actualMarker.homicidio.victima.apellido}}</p>
-                    <p>{{actualMarker.homicidio.edad}}</p>
-                    <p>Comisaria:{{actualMarker.homicidio.comisaria}}</p>
-                    <p>Fecha: {{actualMarker.homicidio.fecha}}</p>
-                </window>
+                <windows>
+                    <window ng-repeat="marker in markers" show="showWindow" coords="marker.gps">
+                        <p>Nombre: {{marker.victima.nombre}}</p>
+                        <p>Apellido: {{marker.victima.apellido}}</p>
+                        <p>{{marker.edad}}</p>
+                        <p>Comisaria:{{marker.comisaria}}</p>
+                        <p>Fecha: {{marker.fecha}}</p>
+                    </window>
+                </windows>
+
+                <layer namespace="visualization" type="FusionTablesHeatmap" show="true" onCreated=""></layer>
+
 
             </google-map>
+
         </div>
     </div>
     <div class="col-xs-3">

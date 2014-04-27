@@ -7,9 +7,10 @@ angular.module('HomicidiosApp.controllers', [])
 
   }])
   .controller('Mapa', ['$scope', 'HomicidiosServices', function($scope, HomicidiosServices) {
-        $scope.actualMarker = null;
+        $scope.markers = [];
         $scope.showWindow = false;
         $scope.homicidios = HomicidiosServices.query();
+        $scope.googleMap = {};
         $scope.map = {
             center: {
                 latitude:-32.9377441,
@@ -48,11 +49,17 @@ angular.module('HomicidiosApp.controllers', [])
         };
 
         $scope.onMarkerClicked = function(item) {
-            console.log(this);
-            $scope.actualMarker = item;
-
-            $scope.showWindow = true;
+                $scope.markers = [item.homicidio];
+                $scope.showWindow = true;
         };
+
+        $scope.prepareHeatMap = function(layer) {
+                heatMapValues = [
+                    new google.maps.LatLng(-32.9377441,-60.6536844)
+                ];
+            var pointArray = new google.maps.MVCArray(heatMapValues);
+            layer.setData(pointArray);
+        }
 
         $scope.tipo = function(homicidio) {
 
